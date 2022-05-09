@@ -1,12 +1,40 @@
 {
 "a":[
 "Aaron",
-"Awita",
-"Azariasz"
+"Abwita",
+"Acariasz"
 ],
 "ą":["Ąbcownik"],
-"b":["Baalis",
-"Bygost",
-"Bytomir"
-]
+"b":["Baalis"],
+  "c": ["Cecylia"],
+  "ć": ["ćeć"],
+  "d": ["Darek"],
+  "e": ["Eliasz"],
+  "ę": ["Ęfrat"],
+  "f": ["Farmazon"],
+  "g": ["Gowidział"],
+  "h": ["Hellenah"],
+  "i": ["Izobara"],
+  "j": ["Jerry"],
+  "k": ["Konstantynapolitańczykóweczka"],
+  "l": ["Latin"],
+  "ł": ["łoooo"],
+  "m": ["Meteor"],
+  "n": ["Niżej"],
+  "ń": ["ńuńa"],
+  "o": ["Opresja"],
+  "ó": ["ówiąd"],
+  "p": ["Paralityk"],
+  "r": ["Rozefa"],
+  "s": ["Statystycznie"],
+  "ś": ["śdźbłó"],
+  "t": ["taktak"],
+  "u": ["Utylizatornia"],
+  "v": ["Vertystyl"],
+  "w": ["WiśtaWio"],
+  "x": ["Xenia"],
+  "y": ["Yyyyykhm"],
+  "z": ["Zed"],
+  "ź": ["Zied"],
+  "ż": ["Żet"]
 }
