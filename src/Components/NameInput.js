@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {insertInputValue} from "../actions/nameInputActions";
 
 export const NameInput=()=>{
-    const [nameValue, setNameValue]= useState('');
+    const dispatch = useDispatch();
+    const {nameValue} = useSelector( store => store.inputValue);
 
     const handleChange = (e)=>{
-        setNameValue(e.target.value);
+        dispatch(insertInputValue({nameValue: e.target.value}));
     }
-    
+
     return(<>
         <input
             type="text"
