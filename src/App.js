@@ -1,9 +1,10 @@
 import React from 'react';
+import {NameInput} from "./Components/NameInput";
 
 const App = () => {
   return (
     <div className="App">
-      123
+      <NameInput/>
     </div>
   );
 }
