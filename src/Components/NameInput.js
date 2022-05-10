@@ -1,22 +1,30 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {insertInputValue} from "../actions/nameInputActions";
+import {getObjectFromApi, insertInputValue} from "../actions/nameInputActions";
+import {getObjectFromAPIFunction} from "../utils/functions";
 
-export const NameInput=()=>{
+export const NameInput= ()=>{
     const dispatch = useDispatch();
-    const {nameValue} = useSelector( store => store.inputValue);
+    const {nameValue, usersNamesFromAPI} = useSelector( store => store.inputValue);
 
-    const handleChange = (e)=>{
+    useEffect(()=>{
+        (async ()=>dispatch(getObjectFromApi(await getObjectFromAPIFunction())))();
+        }, [])
+
+    const handleChange = async (e)=>{
+        e.preventDefault();
         dispatch(insertInputValue({nameValue: e.target.value}));
     }
 
-    return(<>
+
+    return(<form>
         <input
             type="text"
             onChange={handleChange}
             value={nameValue}
         />
-        <button>Zapisz</button>
+        <button type="submit">Zapisz</button>
         <p>{nameValue}</p>
-    </>)
+        {usersNamesFromAPI.map((elem)=> <p key={Math.random()*21736178246218347856}>{elem}</p>)}
+    </form>)
 }

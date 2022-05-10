@@ -3,4 +3,4 @@ import {rootReducer} from "../reducers/rootReducer";
 
 
 //deprecated method, but i could not use React Toolkit
-export const store = createStore(rootReducer)
+export const store = createStore(rootReducer);
