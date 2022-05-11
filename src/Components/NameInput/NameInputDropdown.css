@@ -1,8 +1,22 @@
-.tempName__item {
+.temp {
     display: block;
-    width: 300px;
+    position: absolute;
 }
-
+.tempName__item {
+    background-color: white;
+    border: 1px #969292 solid;
+    color: black;
+    width: 300px;
+    padding: 10px;
+    z-index: 99;
+    cursor: pointer !important;
+    border-radius: 5px;
+}
 .tempName__item:hover {
     background-color: gray;
+}
+
+.tempName__item-active {
+    background-color: greenyellow;
+    pointer-events: none;
 }

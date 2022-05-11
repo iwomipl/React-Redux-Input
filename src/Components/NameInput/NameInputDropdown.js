@@ -5,7 +5,7 @@ import './NameInputDropdown.css'
 
 export const NameInputDropdown= ()=>{
     const dispatch = useDispatch();
-    const {nameValue, usersNamesFromAPI, shortListOfUsers} = useSelector( store => store.inputValue);
+    const {nameValue, usersNamesFromAPI, shortListOfUsers, activeDivNumber} = useSelector( store => store.inputValue);
 
     useEffect(()=>{
         if (nameValue.length > 0){
@@ -20,18 +20,18 @@ export const NameInputDropdown= ()=>{
         dispatch(insertInputValue({nameValue: elem}));
     }
 
-    return(<li className="temp">
-         {shortListOfUsers.map((elem)=> {
-             return (<ul
-                 key={'a' + Math.random() * 21736178246218347856}
-                 className="tempName__item"
+    return(<div className="temp">
+         {shortListOfUsers.map((elem, index)=> {
+             return (<div
+                 key={index}
+                 className={activeDivNumber === index ? "tempName__item tempName__item-active" : "tempName__item"}
                  onClick={()=>handleClick(elem)}
              ><strong>{
                  elem.substring(0, nameValue.length)
              }</strong>{
                  elem.substring(nameValue.length)
-             }</ul>)
+             }</div>)
          })
          }
-    </li>)
+    </div>)
 }
