@@ -8,5 +8,5 @@ export const getObjectFromAPIFunction= async ()=>{
     })
     const data = await result.json();
 
-    return data.map(element => element.name);
+    return data.map(element => element.name).sort();
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {NameInput} from "./Components/NameInput";
+import {NameInput} from "./Components/NameInput/NameInput";
 import {store} from "./store";
 import {Provider} from "react-redux";
 

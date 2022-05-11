@@ -1,8 +1,9 @@
-import {CHANGE_INPUT_VALUE, GET_OBJECT_FROM_API} from '../actions/nameInputActions'
+import {CHANGE_INPUT_VALUE, GET_OBJECT_FROM_API, SET_NEW_SHORTLIST_OF_USERS} from '../actions/nameInputActions'
 
 const initialState = {
     nameValue: '',
     usersNamesFromAPI: [],
+    shortListOfUsers: [],
 }
 
 export const nameInputReducer = (state = initialState, action)=>{
@@ -16,6 +17,11 @@ export const nameInputReducer = (state = initialState, action)=>{
             return {
                 ...state,
                 usersNamesFromAPI: action.payload,
+            };
+        case SET_NEW_SHORTLIST_OF_USERS:
+            return {
+                ...state,
+                shortListOfUsers: action.payload,
             };
         default:
             return state;
