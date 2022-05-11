@@ -16,7 +16,7 @@ export const nameInputReducer = (state = initialState, action)=>{
         case GET_OBJECT_FROM_API:
             return {
                 ...state,
-                usersNamesFromAPI: action.payload,
+                usersNamesFromAPI: action.payload.map(element => element.name).sort(),
             };
         case SET_NEW_SHORTLIST_OF_USERS:
             return {

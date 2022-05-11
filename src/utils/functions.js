@@ -6,7 +6,6 @@ export const getObjectFromAPIFunction= async ()=>{
             'Content-Type': 'application/json',
         },
     })
-    const data = await result.json();
 
-    return data.map(element => element.name).sort();
+    return await result.json();
 }
