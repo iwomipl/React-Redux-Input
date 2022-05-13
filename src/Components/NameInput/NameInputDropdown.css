@@ -11,12 +11,17 @@
     z-index: 99;
     cursor: pointer !important;
     border-radius: 5px;
+    font-weight: 200;
+
+}
+.tempName__item-active:hover {
+    background-color: #a6a6a6;
+    /*pointer-events: none;*/
 }
 .tempName__item:hover {
-    background-color: gray;
+    background-color: #a6a6a6;
 }
 
 .tempName__item-active {
-    background-color: greenyellow;
-    pointer-events: none;
+    background-color: greenyellow !important;
 }

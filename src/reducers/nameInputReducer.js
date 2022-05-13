@@ -31,7 +31,7 @@ export const nameInputReducer = (state = initialState, action)=>{
             };
         case SET_ACTIVE_DIV_NUMBER:
             //if new state.activeDivNumber will be higher, than array with names, set focus on first element
-            if (state.activeDivNumber + action.payload >= state.shortListOfUsers.length) return {
+            if (state.activeDivNumber + action.payload >= state.shortListOfUsers.length && state.shortListOfUsers.length !== (0 || 1)) return {
                 ...state,
                 activeDivNumber: 0,
             }

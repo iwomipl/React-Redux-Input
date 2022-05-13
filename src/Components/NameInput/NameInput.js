@@ -6,36 +6,40 @@ import {NameInputDropdown} from "./NameInputDropdown";
 
 import './NameInput.css'
 
-export const NameInput= ()=>{
+export const NameInput = (props) => {
     const dispatch = useDispatch();
-    const {nameValue, shortListOfUsers, activeDivNumber} = useSelector( store => store.inputValue);
+    const {nameValue, shortListOfUsers, activeDivNumber} = useSelector(store => store.inputValue);
 
-    useEffect(()=>{
-        (async ()=>dispatch(getObjectFromApi(await getObjectFromAPIFunction())))();
-        }, [])
+    useEffect(() => {
+        const urlAddress = 'https://jsonplaceholder.typicode.com/users';
+        (async () => dispatch(getObjectFromApi(await getObjectFromAPIFunction(urlAddress))))();
+    }, []);
 
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         e.preventDefault();
         dispatch(insertInputValue({nameValue: e.target.value}));
     }
 
-    const handleSubmit = ()=>{
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.toggle();
     }
 
-    const keyDown = (e)=>{
-        if (e.key === 'ArrowDown'){
+    const keyDown = (e) => {
+        if (e.key === 'ArrowDown') {
             dispatch(setActiveDivNumber(1));
-        } else if (e.key === 'ArrowUp'){
+        } else if (e.key === 'ArrowUp') {
             dispatch(setActiveDivNumber(-1));
-        } else if (e.key === 'Enter'){
+        } else if (e.key === 'Enter') {
             e.preventDefault();
-            dispatch(insertInputValue({nameValue:shortListOfUsers[activeDivNumber]}))
+            if (!shortListOfUsers.includes(nameValue) && shortListOfUsers.length !== 1) {
+                dispatch(insertInputValue({nameValue: (shortListOfUsers[activeDivNumber] || nameValue)}));
+            }
         }
 
     }
 
-    return(<form onSubmit={handleSubmit}>
+    return (<form onSubmit={handleSubmit}>
         <input
             className="input"
             type="text"

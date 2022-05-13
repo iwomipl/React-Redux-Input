@@ -1,5 +1,4 @@
-export const getObjectFromAPIFunction= async ()=>{
-    const urlAddress = 'https://jsonplaceholder.typicode.com/users';
+export const getObjectFromAPIFunction= async (urlAddress)=>{
     const result = await fetch(urlAddress, {
         method: 'GET',
         headers: {
