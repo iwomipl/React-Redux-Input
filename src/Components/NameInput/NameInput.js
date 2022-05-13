@@ -33,6 +33,7 @@ export const NameInput = (props) => {
         } else if (e.key === 'Enter') {
             e.preventDefault();
             if (!shortListOfUsers.includes(nameValue) && shortListOfUsers.length !== 1) {
+                //storing nameValue after hitting enter key, it's value of chosen div if it was chosen or the inputs value
                 dispatch(insertInputValue({nameValue: (shortListOfUsers[activeDivNumber] || nameValue)}));
             }
         }

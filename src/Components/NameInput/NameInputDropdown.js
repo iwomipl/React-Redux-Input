@@ -9,7 +9,12 @@ export const NameInputDropdown= ()=>{
 
     useEffect(()=>{
         if (nameValue.length > 0){
-            dispatch(setNewShortListOfUsers(usersNamesFromAPI.filter((elem) => elem.toLowerCase().indexOf(nameValue.toLowerCase()) === 0)));
+            dispatch(setNewShortListOfUsers(usersNamesFromAPI
+                //filter elements from All names from API to the value from input, and lives only the matching ones
+                .filter((elem) => {
+                    //return boolean value comparison, the elements start and value from input start must be the same
+                return elem.toLowerCase().indexOf(nameValue.toLowerCase()) === 0;
+            })));
         } else {
             dispatch(setNewShortListOfUsers([]));
         }
@@ -20,11 +25,11 @@ export const NameInputDropdown= ()=>{
         dispatch(insertInputValue({nameValue: elem}));
     }
 
-    return(<div className="temp">
+    return(<div className="dropdown">
          {shortListOfUsers.map((elem, index)=> {
              return (<div
                  key={index}
-                 className={activeDivNumber === index ? "tempName__item tempName__item-active" : "tempName__item"}
+                 className={activeDivNumber === index ? "dropdown__item dropdown__item-active" : "dropdown__item"}
                  onClick={()=>handleClick(elem)}
              ><strong>{
                  elem.substring(0, nameValue.length)

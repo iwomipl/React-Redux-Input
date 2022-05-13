@@ -1,8 +1,8 @@
-.temp {
+.dropdown {
     display: block;
     position: absolute;
 }
-.tempName__item {
+.dropdown__item {
     background-color: white;
     border: 1px #969292 solid;
     color: black;
@@ -14,14 +14,14 @@
     font-weight: 200;
 
 }
-.tempName__item-active:hover {
-    background-color: #a6a6a6;
-    /*pointer-events: none;*/
-}
-.tempName__item:hover {
+.dropdown__item:hover {
     background-color: #a6a6a6;
 }
 
-.tempName__item-active {
+.dropdown__item-active {
     background-color: greenyellow !important;
+}
+
+.dropdown__item-active:hover {
+    background-color: #a6a6a6;
 }
