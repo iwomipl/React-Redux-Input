@@ -47,6 +47,7 @@ export const NameInput = (props) => {
             onChange={handleChange}
             value={nameValue}
             onKeyDown={keyDown}
+            placeholder="Name"
         />
         <button type="submit">Submit</button>
         {nameValue.length > 0 ?
